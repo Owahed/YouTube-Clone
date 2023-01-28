@@ -1,25 +1,26 @@
-import { useState } from "react";
-import { Container } from "react-bootstrap";
-import Header from "./components/header/Header";
-import HomeScreen from "./screen/homeScreen/HomeScreen";
-import LoginScreen from "./screen/loginScreen/LoginScreen";
-import Sidebar from "./components/sidebar/Sidebar";
 import "./_app.scss";
 
+import { useNavigate } from "react-router-dom";
+import Layout from "./layout/Layout";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import LoginScreen from "./screen/loginScreen/LoginScreen";
+
 function App() {
-  const [sidebar, setSidebar] = useState(false);
-  const handelSidebarToggle = () => setSidebar(!sidebar);
+  const { accessToken, loading } = useSelector((state) => state.auth);
+
+  // const history = useNavigate();
+  console.log(accessToken);
+  useEffect(() => {
+    // history("/auth");
+    if (accessToken) {
+      return <LoginScreen />;
+    }
+  }, [accessToken, loading]);
 
   return (
     <>
-      {/* <Header handelSidebarToggle={handelSidebarToggle} />
-      <div className="app_container ">
-        <Sidebar handelSidebarToggle={handelSidebarToggle} sidebar={sidebar} />
-        <Container fluid className="app_main ">
-          <HomeScreen />
-        </Container>
-      </div> */}
-      <LoginScreen />
+      <Layout />
     </>
   );
 }

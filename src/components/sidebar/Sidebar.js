@@ -12,7 +12,6 @@ import {
 } from "react-icons/md";
 
 const Sidebar = ({ sidebar, handelSidebarToggle }) => {
-  console.log("object", sidebar);
   return (
     <nav
       onClick={() => handelSidebarToggle(false)}

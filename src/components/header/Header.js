@@ -29,7 +29,7 @@ const Header = ({ handelSidebarToggle }) => {
         </button>
       </form>
 
-      <dic className="header_icons">
+      <div className="header_icons">
         <MdNotifications size={28} />
         <MdApps size={28} />
 
@@ -37,7 +37,7 @@ const Header = ({ handelSidebarToggle }) => {
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT5MH5AMJXnmEHXkfKL1Ob36D91huvEw5rlQ&usqp=CAU"
           alt="avatar"
         />
-      </dic>
+      </div>
     </div>
   );
 };

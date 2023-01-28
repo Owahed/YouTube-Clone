@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { Outlet } from "react-router-dom";
 import CategoriesBar from "../../components/categoriesBar/CategoriesBar";
 import Video from "../../components/video/Video";
 
